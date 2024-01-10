@@ -1,0 +1,26 @@
+<%- include('partials/header', { pageTitle }) %>
+
+<div class="form-container">
+  <h1>Login</h1>
+  <form action="/login" method="post">
+    <div class="input-container">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <div class="input-container">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+
+  <% if (error === '1') { %>
+    <p class="error-message">Invalid login details</p>
+  <% } %>
+
+  <% if (logout === 'success') { %>
+    <p class="success-message">You have successfully logged out!</p>
+  <% } %>
+</div>
+
+<%- include('partials/footer')%>
